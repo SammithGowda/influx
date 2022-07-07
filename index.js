@@ -4,8 +4,10 @@ const app = express();
 app.use(express.json());
 
 const items = require("./controller/item_controller");
+const carts = require("./controller/userCart_controller");
 
 app.use("/items", items);
+app.use("/carts", carts);
 
 const port = 4002;
 

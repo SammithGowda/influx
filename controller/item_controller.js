@@ -3,7 +3,7 @@ const router = express.Router();
 const Items = require("../module/item_module");
 router.get("/", async (req, res) => {
   try {
-    const itemMaster = await Items.find().sort({ _id: -1 }).lean().exec();
+    const itemMaster = await Items.find().lean().exec();
     return res.status(201).send(itemMaster);
   } catch (er) {
     return res.status(501).send({ Message: er.message });
